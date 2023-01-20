@@ -4,7 +4,7 @@ import darkModeLogo from "../darkmodelogotext.png";
 import bgImg from "../bg.jpg";
 
 
-export default function LoginForm(){
+export default function LoginPage(){
 
     return(
             <>

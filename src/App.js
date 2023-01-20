@@ -2,18 +2,24 @@
 import './App.css';
 import Browse from './components/Browse';
 import Hero from './components/Hero';
-import LoginForm from './components/LoginForm';
-import SignUpForm from './components/SignUpForm';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import LoginPage from './components/LoginPage';
+import SignUpPage from './components/SignUpPage';
+import {  Routes, Route } from 'react-router-dom';
 function App() {
   
   return (
-    <div className=''>
-      {/* <Browse/>  */}
-    {/* <LoginForm/> */}
-    {/* <SignUpForm/> */}
-    {/* <Hero className="overflow-x-hidden"/> */}
-  </div>
+    <Routes>
+  
+
+    <Route path="/" element={<Hero/>}/>
+    <Route path="/browse" element={<Browse/>}/>
+    <Route path="/login" element={<LoginPage/>}/>
+    <Route path="/signup" element={<SignUpPage/>}/>
+    {/* <Route path="*" element={<Page404/>}/> */}
+    </Routes>
+
+   
+    
   );
 }
 

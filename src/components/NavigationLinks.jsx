@@ -1,12 +1,14 @@
+import { Link } from "react-router-dom";
+import Browse from "./Browse";
 
 function Navigationlinks() {
     return(
         <ul className="flex flex-row gap-5 text-xl font-bold font-[Mulish] -ml-9 mt-8">
-            <li><a className="no-underline" href="#">Home</a></li>
-            <li><a className="no-underline" href="#">Trending</a></li>
-            <li><a className="no-underline" href="#">Oldies</a></li>
-            <li><a className="no-underline " href="#">My List</a></li>
-            <li><a className="no-underline" href="#">Popular</a></li>
+            <li><Link to='/browse' >Home</Link></li>
+            <li><Link >Trending</Link></li>
+            <li><Link >Oldies</Link></li>
+            <li><Link className="no-underline " >My List</Link></li>
+            <li><Link >Popular</Link></li>
         </ul>
     );
 }
