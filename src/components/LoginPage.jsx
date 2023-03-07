@@ -2,14 +2,14 @@ import InputForm from "./Input";
 import lightModeLogo from "../trans.png";
 import darkModeLogo from "../darkmodelogotext.png";
 import bgImg from "../bg.jpg";
-import { Link } from "react-router-dom";
+import { Link, Router, useNavigate } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup"; 
 import { useForm } from "react-hook-form";
 import schema from "../schema/formSchema";
 
 export default function LoginPage(){
     const {register, handleSubmit, formState: {isDirty,isValid,errors}} = useForm({resolver: yupResolver(schema),mode: 'onChange', defaultValues: {Email : '', Password: ''}})
-
+    // const navigate = useNavigate()
     return(
             <>
              <img    src={bgImg} className="object-cover h-full" alt="StreamMate" />
@@ -18,7 +18,13 @@ export default function LoginPage(){
         <img src={lightModeLogo} className=" md:ml-[4em] mt-3 object-cover h-1/2 " alt="StreamMate" />
        
         </div>
-        <form onSubmit={handleSubmit((data) =>{console.log(data)})}  method="post" className="text-start flex flex-col bg-black p-20 rounded-3xl opacity-[.85] translate-x-[140%] translate-y-[25%] ">
+        <form 
+       
+        onSubmit={handleSubmit((data) =>{
+            
+            console.log(data)
+            // navigate('/browse')
+            })}  method="post" className="text-start flex flex-col bg-black p-20 rounded-3xl opacity-[.85] translate-x-[140%] translate-y-[25%] ">
         <p className="font-[Museo] text-white text-3xl mb-12 ">Login</p>
         <div className="flex flex-col gap-10">
           <InputForm kind={register}  label="Email" name="Email" type="text" placeholder="Enter Your Email"/>
